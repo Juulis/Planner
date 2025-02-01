@@ -62,6 +62,7 @@ function Calendar() {
             name: newProjectName,
             hours: Array(7 * 7).fill(0),
         };
+        console.log(""+e);
         setProjects([...projects, newProject]);
         setNewProjectName('');
         setIsProjectFormVisible(false); // Stänger popup

@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { getResourceCards, createResourceCard, updateResourceCard, deleteResourceCard } from '../Api';
-import { Calendar, momentLocalizer } from 'react-big-calendar';
-import moment from 'moment';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
+import './Calendar.css';
+import Calendar from './Calendar';
 
-const localizer = momentLocalizer(moment);
 
 const ResourceCards = () => {
     const [cards, setCards] = useState([]);
@@ -129,7 +127,6 @@ const ResourceCards = () => {
             {/* Kalender för att visa resource cards */}
             <h2>Calendar View</h2>
             <Calendar
-                localizer={localizer}
                 events={cards.map((card) => ({
                     title: card.title,
                     start: new Date(card.from),
